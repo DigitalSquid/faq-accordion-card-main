@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root {
+  --darkBlue: hsl(238, 29%, 16%);
+  --softRed: hsl(14, 88%, 65%);
+  --softViolet: hsl(273, 75%, 66%);
+  --softBlue: hsl(240, 73%, 65%);
+  --darkGrayishBlue: hsl(237, 12%, 33%);
+  --grayishBlue: hsl(240, 6%, 50%);
+  --lightGrayishBlue: hsl(240, 5%, 91%);
+  --lighterGrayishBlue: hsl(240, 67%, 96%);
+  --white: hsl(0, 0%, 100%);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(var(--softViolet), var(--softBlue));
+  background-repeat: no-repeat;
+  color: var(--grayishBlue);
+  height: 100vh;
+  font-size: 16px;
+  font-family: 'Kumbh Sans';
+  padding: 0 1.5rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+details {
+  padding: 1rem 1rem 1rem 0;
+  border-bottom: 1px solid var(--lightGrayishBlue);
+  position: relative;
+}
+
+details::after {
+  content: '';
+  display: block;
+  position: absolute;
+  padding: 0.5rem;
+  background-image: url('../images/icon-arrow-down.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  right: 0;
+  top: 1rem;
+  transition: 0.5s ease;
+}
+
+details[open]::after {
+  transform: rotate(-180deg);
+}
+
+details[open] summary {
+  font-weight: bold;
+  color: var(--darkBlue);
+}
+
+details p {
+  font-size: 0.75rem;
+  line-height: 1.6;
+  margin: 0.75rem 0 0;
+}
+
+summary {
+  font-size: 0.8125rem;
+  cursor: pointer;
+}
+
+section {
+  padding: 0 1.5rem 1.5rem;
+}
+
+h1 {
+  text-align: center;
+  color: var(--darkBlue);
+}
+
+main {
+  background-color: var(--white);
+  max-width: 57.5rem;
+  margin: 9rem auto 0;
+  border-radius: 1rem;
+  position: relative;
+}
+
+picture img {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.header-image {
+  position: relative;
+}
+
+.illustration-online {
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  top: -6.9rem;
+  width: 15rem;
+}
+
+.illustration-online-shadow {
+  display: block;
+  margin: 0 auto;
+  width: 15rem;
+  text-align: center;
+}
+
+.box-desktop {
+  display: none;
+}
+
+@media only screen and (min-width: 1440px) {
+  main {
+    display: flex;
+    min-height: 32rem;
+  }
+
+  h1 {
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+
+  .header-image {
+    overflow: hidden;
+  }
+
+  .header-image,
+  section {
+    width: 50%;
+  }
+
+  section {
+    margin-top: 3rem;
+    padding-right: 5.5rem;
+  }
+
+  summary {
+    font-size: 0.875rem;
+    cursor: pointer;
+  }
+
+  .illustration-online {
+    width: 30rem;
+    top: 4.25rem;
+    left: -5.5rem;
+    transform: none;
+    z-index: 1;
+  }
+
+  .illustration-online-shadow {
+    width: 60rem;
+    top: -18rem;
+    left: -35.5rem;
+    position: absolute;
+  }
+
+  .box-desktop {
+    display: block;
+    position: absolute;
+    top: 13rem;
+    left: -6rem;
+    z-index: 2;
+  }
+}
